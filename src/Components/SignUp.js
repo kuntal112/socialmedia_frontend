@@ -36,9 +36,12 @@ const btnHandler=()=>{
     }
 }
 
-const uploadFields=useCallback(()=>{
+const uploadFields=()=>{
 
     if(!/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+       console.log("email ",email)
+       console.log("name",name)
+       console.log("pass ",password)
         M.toast({html:"invalid Email",classes:"#f44336 red"})
         return;
     }
@@ -72,13 +75,12 @@ const uploadFields=useCallback(()=>{
        setPassword("")
        setEmail("")
     }).catch(err=>console.log(err))
-},[])
+}
 useEffect(()=>{
     if(url){
        uploadFields();
     }
-   
-},[url,uploadFields])
+},[url])
     return (
         <div className="myCard">
             <div className=" card auth-card input-field">
