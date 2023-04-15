@@ -1,7 +1,7 @@
 [build]
-  command = "CI=false npm run build"
+  command = "npm run build"
 
 [[redirects]]
   from = "/*"
-  to = "https://socialmedia-node.onrender.com"
+  to = "https://socialmedia-node.onrender.com/:splat"
   status = 200
